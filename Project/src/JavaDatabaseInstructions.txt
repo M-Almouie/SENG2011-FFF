@@ -1,0 +1,26 @@
+In the DBMain and DbController classes, there are four commands that can be used.
+
+The first, 'Make', simply makes a new database by the name 'Outlets.db', and the tables Outlets and Tags within it, which should
+    be located in the project folder of wherever the classes are if an IDE is being used.
+    It only needs to run once, as the database stays after the program is stopped, but should be the first command run.
+
+The second 'Add', adds a row of data (i.e. data of an outlet) to the given table. It is structured as follows: Add, then the name of the database,
+    the name of the table which is going to be added with a new row, then the pairs of columns and their values.
+    As an example, if you wanted to add an outlet with an id of 0, and a name of Robins, you would enter the command:
+        Add Outlets Outlets id 0 name 'Robins'
+    The single quotes are needed as Robins is a string
+    
+The third command, 'Delete', removes a row from the table where the value/s of a column/s satisfies a condition. It is structured as follows:
+    Add, then the name of the database, the name of the table from which a row is going to be removed, then the pairs of columns and their
+    values for the conditions. For example, if you wanted to delete the row in the Outlets table where the id is 0, the commands would be:
+        Delete Outlets Outlets Tag 0
+        
+The fourth command, 'Print', allows the output of the info of tables in a database. For example, typing the command, Print Outlets Tags, prints
+    out all the rows in the Tags table of the Outlets database. In the current version of the code, a condition can also be specified where the ids and names
+    of outlets which have the specified tags: i.e. 'Print Outlets Tags tag Chinese' prints out the ids and names of the outlets which has the Chinese tag
+    
+Typing 'end' finishes the program
+    
+NOTES: when running this code, the DB Browser for SQLite program should be used to help debugging the code by checking the status of a database:
+        http://sqlitebrowser.org/
+    I also plan to add more functionality to the code such as being able to change data for each outlet, and having more relations between tables.
